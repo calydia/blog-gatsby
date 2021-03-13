@@ -24,7 +24,7 @@ export const lightTheme = {
 }
 
 export const darkTheme = {
-  text: '#333333',
+  text: 'white',
   body: 'linear-gradient(270deg, #010017, #01000f)',
   bodyFallBack: '#010017',
   headerGradient: 'linear-gradient(to right, #35035E 0%, #18399A 50%, #35035E 100%)',

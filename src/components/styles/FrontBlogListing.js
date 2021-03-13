@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const FrontBlogListing = styled.div`
+  color: ${({ theme }) => theme.text};
   margin: 0 auto;
   max-width: 80em;
   padding: 2em 2em;
