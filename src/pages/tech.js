@@ -5,6 +5,7 @@ import Layout from '../components/Layout';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import BlogListing from '../components/styles/BlogListing';
 import BlogCategoryContent from '../components/styles/BlogCategoryContent';
+import { Helmet } from 'react-helmet';
 
 const TechListing = ({ data }) => {
   const page = data.drupal.page;
@@ -14,7 +15,7 @@ const TechListing = ({ data }) => {
   return (
     <Layout>
       <main>
-{/*         <Head>
+        <Helmet>
           <title>Tech | Blog - Sanna Mäkinen</title>
           <meta name="Description" content={page.metaDescription} />
           <meta
@@ -28,7 +29,7 @@ const TechListing = ({ data }) => {
           <meta property="og:image" content="https://blog.sanna.ninja/images/osiris.jpg" />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
-        </Head> */}
+        </Helmet>
         <BlogCategoryContent>
           <h1 id="skip-target">{ page.title }</h1>
           <div dangerouslySetInnerHTML={{ __html: page.content }}></div>

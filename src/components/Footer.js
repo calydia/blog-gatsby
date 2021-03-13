@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const FooterStyles = styled.footer`
   background-color: ${({ theme }) => theme.footerBg};
@@ -102,13 +103,13 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-{/*             <Image
-              src="/icons/twitter.svg"
+            <StaticImage
+              src="../images/twitter.svg"
               alt=""
               width={30}
               height={30}
               aria-hidden="true"
-            /> */}
+            />
             <span className="link-name">My Twitter profile</span>
           </a>
         </div>

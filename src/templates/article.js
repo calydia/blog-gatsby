@@ -4,6 +4,7 @@ import dayjs from 'dayjs';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { Helmet } from 'react-helmet';
 
 const BlogWrapper = styled.div`
   display: grid;
@@ -121,7 +122,7 @@ const BlogPost = ({ data }) => {
   return (
     <Layout>
       <main>
-  {/*       <Head>
+        <Helmet>
           <title>{post.title} | Blog - Sanna Mäkinen</title>
           <meta name="Description" content={post.metaDescription} />
           <meta
@@ -133,7 +134,7 @@ const BlogPost = ({ data }) => {
           <meta property="og:locale" content="en" />
           <meta property="og:site_name" content="Blog - Sanna Mäkinen" />
           <meta property="og:image" content={post.mainImage} />
-        </Head> */}
+        </Helmet>
         <BlogWrapper>
           <div className="blog-main-image-wrapper">
             <GatsbyImage

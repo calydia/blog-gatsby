@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import Layout from '../components/Layout';
 import FrontBlogListing from '../components/styles/FrontBlogListing';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { Helmet } from 'react-helmet';
 
 const FrontHeading = styled.h1`
   font-size: 2rem;
@@ -26,7 +27,7 @@ const FrontHeading = styled.h1`
   return (
     <Layout>
       <main>
-  {/*       <Head>
+        <Helmet>
           <title>Welcome to my blog! | Blog - Sanna Mäkinen</title>
           <meta name="Description" content={page.metaDescription} />
           <meta
@@ -40,7 +41,7 @@ const FrontHeading = styled.h1`
           <meta property="og:image" content="https://blog.sanna.ninja/images/osiris.jpg" />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
-        </Head> */}
+        </Helmet>
           <FrontHeading id="skip-target">
             { page.title }
           </FrontHeading>

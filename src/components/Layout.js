@@ -1,13 +1,11 @@
 import React from 'react';
-import { useState } from "react";
 import styled, { ThemeProvider } from 'styled-components';
-import  {useDarkMode} from "../components/useDarkMode"
-import { lightTheme, darkTheme, GlobalStyles } from "../../themeConfig";
+import  {useDarkMode} from '../components/useDarkMode'
+import { lightTheme, darkTheme, GlobalStyles } from '../../themeConfig';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Brightness2Icon from '@material-ui/icons/Brightness2';
-import WbSunnyIcon from '@material-ui/icons/WbSunny';
-import Toggle from "../components/Toggler";
+import Toggle from '../components/Toggler';
+import Helmet from 'react-helmet';
 
 const SkipLink = styled.a`
 position: absolute;
@@ -30,7 +28,7 @@ top: auto;
 }
 `;
 
-export default ({ children }) => {
+const Layout = ({ children }) => {
 
   const [theme, themeToggler] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
@@ -38,6 +36,11 @@ export default ({ children }) => {
 
   return (
     <ThemeProvider theme={themeMode}>
+      <Helmet>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Average+Sans&family=Rock+Salt&display=swap');
+      </style>
+      </Helmet>
       <GlobalStyles />
       <SkipLink href="#skip-target" id="skip" className="skip-link">Skip to content</SkipLink>
       <Toggle theme={theme} toggleTheme={themeToggler} />
@@ -48,3 +51,5 @@ export default ({ children }) => {
     </ThemeProvider>
   );
 };
+
+export default Layout;

@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useStaticQuery, Link, graphql } from 'gatsby';
+
 
 const HeaderStyles = styled.header`
 background: ${({ theme }) => theme.headerGradient};
@@ -85,6 +87,22 @@ a:focus {
 
 const Header = () => {
 
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            menuLinks {
+              name
+              link
+              id
+            }
+          }
+        }
+      }
+    `
+  );
+
   return (
     <HeaderStyles>
         <LogoLink href="/">
@@ -92,10 +110,20 @@ const Header = () => {
           <span className="blog-name">Blog</span>
         </LogoLink>
       <NavigationStyles aria-label="main-navigation">
-        <ul>
-          <li>
-              <a href="/accessibility">Accessibility</a>
-          </li>
+        <ul className="main-menu">
+          {data.site.siteMetadata.menuLinks.map((item) => {
+            return (
+              <li className="main-menu-item" key={item.id}>
+                <Link
+                  to={item.link}
+                  activeClassName="active"
+                  partiallyActive={true}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </NavigationStyles>
     </HeaderStyles>
