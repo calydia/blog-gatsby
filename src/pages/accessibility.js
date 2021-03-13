@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import dayjs from 'dayjs';
-import styled from 'styled-components';
 import Layout from '../components/Layout';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import BlogListing from '../components/styles/BlogListing';
