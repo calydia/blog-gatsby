@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: "blog-gatsby",
@@ -22,6 +26,14 @@ module.exports = {
         path: "./src/images/",
       },
       __key: "images",
+    },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "DRUPAL",
+        fieldName: "drupal",
+        url: process.env.BACKEND_URL,
+      },
     },
   ],
 };
