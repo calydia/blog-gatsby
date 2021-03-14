@@ -46,7 +46,7 @@ const Home = ({ data }) => {
             { page.title }
           </FrontHeading>
           <FrontBlogListing>
-          <ul className="blog-category-articles" role="list">
+          <ul className="blog-category-articles">
             {newest.items.map((node, index) => {
                   return (
                     <li key={`list-item${index}`} className="blog-list-item newest-blog">
