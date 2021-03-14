@@ -74,6 +74,12 @@ const BlogMainContent = styled.div`
       outline-offset: 0;
     }
   }
+  .image-credits {
+    margin-top: 2em;
+    p {
+      font-size: 1rem;
+    }
+  }
 `;
 
 const BlogWriterContent = styled.aside`
@@ -148,7 +154,7 @@ const BlogPost = ({ data }) => {
               | {post.category}
             </span>
             <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
-            <div dangerouslySetInnerHTML={{ __html: post.imageCredits }}></div>
+            <div className="image-credits" dangerouslySetInnerHTML={{ __html: post.imageCredits }}></div>
           </BlogMainContent>
           <BlogWriterContent>
             <article className="info-box">
