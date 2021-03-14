@@ -37,9 +37,10 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={themeMode}>
       <Helmet>
-      <style>
-        @import url('https://fonts.googleapis.com/css2?family=Average+Sans&family=Rock+Salt&display=swap');
-      </style>
+        <meta charSet="utf-8" />
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Average+Sans&family=Rock+Salt&display=swap');
+        </style>
       </Helmet>
       <GlobalStyles />
       <SkipLink href="#skip-target" id="skip" className="skip-link">Skip to content</SkipLink>

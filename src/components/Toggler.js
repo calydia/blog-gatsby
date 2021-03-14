@@ -23,7 +23,10 @@ const Button = styled.button`
 `;
 const Toggle = ({theme,  toggleTheme }) => {
     return (
-      <Button onClick={toggleTheme} className={theme} >
+      <Button onClick={toggleTheme} className={theme} 
+        aria-label={ (theme === "light") ? "Switch to dark mode" : "Switch to light mode"}
+        title={ (theme === "light") ? "Switch to dark mode" : "Switch to light mode"}
+      >
         { (theme === "light") ? <Brightness2Icon aria-hidden="true" /> : <WbSunnyIcon aria-hidden="true" />}
       </Button>
     );
