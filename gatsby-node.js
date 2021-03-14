@@ -4,11 +4,11 @@ const { createRemoteFileNode } = require(`gatsby-source-filesystem`);
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const blogPostTemplate = path.resolve(`src/templates/article.js`);
-  
+
   const result = await graphql(`
   query {
     drupal {
-      articles {
+      articles(limit: 1000) {
         items {
           slug
         }
