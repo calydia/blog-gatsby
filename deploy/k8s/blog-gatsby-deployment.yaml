@@ -1,0 +1,43 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blog-gatsby
+spec:
+  selector:
+    matchLabels:
+      app: blog-gatsby
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 100%
+      maxUnavailable: 25%
+  template:
+    metadata:
+      labels:
+        app: blog-gatsby
+    spec:
+      containers:
+        - image: schala/blog-gatsby
+          name: gatsby
+          imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100M
+            limits:
+              cpu: 1000m
+              memory: 2000M
+          readinessProbe:
+            httpGet:
+              path: /life
+              port: 3000
+            initialDelaySeconds: 2
+            periodSeconds: 3
+          livenessProbe:
+            httpGet:
+              path: /life
+              port: 3000
+            initialDelaySeconds: 2
+            periodSeconds: 3

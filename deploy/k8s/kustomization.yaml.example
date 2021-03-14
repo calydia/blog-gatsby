@@ -1,0 +1,28 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: blog-gatsby
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+configMapGenerator:
+  - name: blog-gatsby-configmap
+    literals:
+      - SITE_URL=site.url.here
+
+resources:
+  - blog-gatsby-namespace.yaml
+  - blog-gatsby-deployment.yaml
+  - blog-gatsby-ingress.yaml
+  - blog-gatsby-service.yaml
+  - blog-gatsby-circleci-sa.yaml
+
+vars:
+  - name: SITE_URL
+    objref:
+      apiVersion: v1
+      kind: ConfigMap
+      name: blog-gatsby-configmap
+    fieldref:
+      fieldpath: data.SITE_URL

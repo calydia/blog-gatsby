@@ -1,0 +1,10 @@
+.git
+.git*
+.cache
+.editorconfig
+.env
+.env.*
+*.md
+deploy/k8s
+deploy/Dockerfile
+node_modules
