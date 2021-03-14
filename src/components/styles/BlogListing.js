@@ -20,6 +20,9 @@ const BlogListing = styled.div`
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 50px 50px;
     }
+    li::before {
+      content: "\\200B";
+    }
   }
   .blog-list-item {
     background-color: ${({ theme }) => theme.listingBg};
