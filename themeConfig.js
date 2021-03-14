@@ -47,6 +47,20 @@ export const darkTheme = {
 }
 
 export const GlobalStyles = createGlobalStyle`
+  body.light {
+    background: white;
+    header {
+      background: linear-gradient(to right, #E6CAFC 0%, #BBC9F7 50%, #E6CAFC 100%);
+    }
+  }
+  body.dark {
+    background: #010017;
+    background: linear-gradient(270deg, #010017, #01000f);
+    background-size: 400% 400%;
+    header {
+      background: linear-gradient(to right, #35035E 0%, #18399A 50%, #35035E 100%);
+    }
+  }
   html,
   body {
     font-size: 16px;
@@ -104,7 +118,7 @@ export const GlobalStyles = createGlobalStyle`
     100% {
       background-position: 0% 50%;
     }
-  }  
+  }
   body {
     background: ${({ theme }) => theme.bodyFallBack};
     background: ${({ theme }) => theme.body};
@@ -123,5 +137,8 @@ export const GlobalStyles = createGlobalStyle`
     overflow: hidden;
     position: absolute;
     width: 1px;
+  }
+  header {
+    background: ${({ theme }) => theme.headerGradient};
   }
 `
