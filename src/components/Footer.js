@@ -58,7 +58,20 @@ const FooterStyles = styled.footer`
       width: 35px;
     }
   }
-
+  .rss-link {
+    border: 1px solid transparent;
+    display: block;
+    font-weight: bold;
+    margin: 0.2em;
+    padding: 0.65em;
+    &:hover {
+      border: 1px solid black;
+    }
+    svg {
+      height: 25px;
+      width: 25px;
+    }
+  }
   .twitter-link {
     border: 1px solid transparent;
     display: block;
@@ -111,6 +124,16 @@ const Footer = () => {
               aria-hidden="true"
             />
             <span className="link-name">My Twitter profile</span>
+          </a>
+          <a href="/rss.xml" className="rss-link somelink">
+            <StaticImage
+              src="../images/rss.svg"
+              alt=""
+              width={25}
+              height={25}
+              aria-hidden="true"
+            />
+            <span className="link-name">Blog RSS feed</span>
           </a>
         </div>
       </div>

@@ -126,6 +126,53 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-feed",
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, drupal } }) => {
+              return drupal.articles.items.map((item) => {
+                return Object.assign({}, {
+                  description: item.metaDescription,
+                  date: item.date,
+                  url: site.siteMetadata.siteUrl + '/' + item.slug,
+                  guid: site.siteMetadata.siteUrl + '/' + item.slug,
+                });
+              });
+            },
+            query: `
+            {
+              drupal {
+                articles {
+                  items {
+                    title
+                    slug
+                    date
+                    metaDescription
+                  }
+                }
+              }
+            }
+            `,
+            output: '/rss.xml',
+            title: "Blog - Sanna Mäkinen's RSS Feed",
+          }
+        ]
+      }
+    },
+    {
       resolve: 'gatsby-plugin-offline',
       options: {
         workboxConfig: {
