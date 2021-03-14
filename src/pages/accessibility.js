@@ -9,8 +9,8 @@ import { Helmet } from 'react-helmet';
 
 const AccessibilityListing = ({ data }) => {
   const page = data.drupal.page;
-  const newest = data.drupal.newest;
-  const listing = data.drupal.listing;
+  const newest = data.drupal.accessibilityNewest;
+  const listing = data.drupal.accessibilityListing;
   
   return (
     <Layout>
@@ -39,7 +39,7 @@ const AccessibilityListing = ({ data }) => {
             {newest.items.map((node, index) => {
               return (
                 <li key={`list-item${index}`} className="blog-list-item newest-blog">
-                  <a key={index} className="post" href={`${node.slug}`} aria-label={`${node.title} on ${dayjs(node.date).format(`MMMM DD, YYYY`)} in category ${node.category}`}>
+                  <a key={index} className="post" href={node.slug} aria-label={`${node.title} on ${dayjs(node.date).format(`MMMM DD, YYYY`)} in category ${node.category}`}>
                     <GatsbyImage
                       image={getImage(node.listingImageFile)} alt=""
                     />
@@ -61,7 +61,7 @@ const AccessibilityListing = ({ data }) => {
             {listing.items.map((node, index) => {
               return (
                 <li key={`list-item${index}`} className="blog-list-item">
-                  <a key={index} className="post" href={`${node.slug}`} aria-label={`${node.title} on ${dayjs(node.date).format(`MMMM DD, YYYY`)} in category ${node.category}`}>
+                  <a key={index} className="post" href={node.slug} aria-label={`${node.title} on ${dayjs(node.date).format(`MMMM DD, YYYY`)} in category ${node.category}`}>
                     <GatsbyImage
                       image={getImage(node.listingImageFile)} alt=""
                     />
@@ -97,7 +97,7 @@ export const query = graphql`
         content
         metaDescription
       }
-      newest: articles(limit: 1, category: 5) {
+      accessibilityNewest: articles(limit: 1, category: 5) {
         items {
           title
           slug
@@ -116,7 +116,7 @@ export const query = graphql`
           category
         }
       }
-      listing: articles(limit: 100, category: 5, offset: 1) {
+      accessibilityListing: articles(limit: 100, category: 5, offset: 1) {
         items {
           title
           slug

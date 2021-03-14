@@ -9,8 +9,8 @@ import { Helmet } from 'react-helmet';
 
 const CatListing = ({ data }) => {
   const page = data.drupal.page;
-  const newest = data.drupal.newest;
-  const listing = data.drupal.listing;
+  const newest = data.drupal.catsNewest;
+  const listing = data.drupal.catsListing;
   
   return (
     <Layout>
@@ -39,7 +39,7 @@ const CatListing = ({ data }) => {
             {newest.items.map((node, index) => {
               return (
                 <li key={`list-item${index}`} className="blog-list-item newest-blog">
-                  <a key={index} className="post" href={`${node.slug}`} aria-label={`${node.title} on ${dayjs(node.date).format(`MMMM DD, YYYY`)} in category ${node.category}`}>
+                  <a key={index} className="post" href={node.slug} aria-label={`${node.title} on ${dayjs(node.date).format(`MMMM DD, YYYY`)} in category ${node.category}`}>
                     <GatsbyImage
                       image={getImage(node.listingImageFile)} alt=""
                     />
@@ -61,7 +61,7 @@ const CatListing = ({ data }) => {
             {listing.items.map((node, index) => {
               return (
                 <li key={`list-item${index}`} className="blog-list-item">
-                  <a key={index} className="post" href={`${node.slug}`} aria-label={`${node.title} on ${dayjs(node.date).format(`MMMM DD, YYYY`)} in category ${node.category}`}>
+                  <a key={index} className="post" href={node.slug} aria-label={`${node.title} on ${dayjs(node.date).format(`MMMM DD, YYYY`)} in category ${node.category}`}>
                     <GatsbyImage
                       image={getImage(node.listingImageFile)} alt=""
                     />
@@ -97,7 +97,7 @@ export const query = graphql`
         content
         metaDescription
       }
-      newest: articles(limit: 1, category: 2) {
+      catsNewest: articles(limit: 1, category: 2) {
         items {
           title
           slug
@@ -116,7 +116,7 @@ export const query = graphql`
           category
         }
       }
-      listing: articles(limit: 100, category: 2, offset: 1) {
+      catsListing: articles(limit: 100, category: 2, offset: 1) {
         items {
           title
           slug

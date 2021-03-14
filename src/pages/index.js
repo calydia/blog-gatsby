@@ -19,10 +19,10 @@ const FrontHeading = styled.h1`
   }
 `;
 
-  const Home = ({ data }) => {
+const Home = ({ data }) => {
     const page = data.drupal.page;
-    const newest = data.drupal.newest;
-    const listing = data.drupal.listing;
+    const newest = data.drupal.frontNewest;
+    const listing = data.drupal.frontListing;
     
   return (
     <Layout>
@@ -115,7 +115,7 @@ export const query = graphql`
         content
         metaDescription
       }
-      newest: articles(limit: 1) {
+      frontNewest: articles(limit: 1) {
         items {
           title
           slug
@@ -134,7 +134,7 @@ export const query = graphql`
           category
         }
       }
-      listing: articles(limit: 100, offset: 1) {
+      frontListing: articles(limit: 100, offset: 1) {
         items {
           title
           slug
