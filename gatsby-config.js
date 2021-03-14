@@ -37,7 +37,12 @@ module.exports = {
     ],
   },
   plugins: [
-    "gatsby-plugin-styled-components",
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        "ssr": false
+      },
+    },
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     {
