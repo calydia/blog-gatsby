@@ -32,12 +32,12 @@ spec:
           readinessProbe:
             httpGet:
               path: /
-              port: nginx
+              port: 80
             initialDelaySeconds: 2
             periodSeconds: 3
           livenessProbe:
             httpGet:
               path: /
-              port: nginx
+              port: 80
             initialDelaySeconds: 2
             periodSeconds: 3
