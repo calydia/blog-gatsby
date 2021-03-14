@@ -40,7 +40,12 @@ module.exports = {
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [`/cats`, `/life`, `/tech`, `/games`, `/accessibility`],
+      },
+    },
     {
       resolve: "gatsby-plugin-manifest",
       options: {
