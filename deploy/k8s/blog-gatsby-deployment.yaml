@@ -20,24 +20,24 @@ spec:
     spec:
       containers:
         - image: schala/blog-gatsby
-          name: gatsby
+          name: app
           imagePullPolicy: Always
           resources:
             requests:
               cpu: 100m
               memory: 100M
             limits:
-              cpu: 1000m
+              cpu: 2000m
               memory: 2000M
           readinessProbe:
             httpGet:
-              path: /life
-              port: 3000
+              path: /
+              port: nginx
             initialDelaySeconds: 2
             periodSeconds: 3
           livenessProbe:
             httpGet:
-              path: /life
-              port: 3000
+              path: /
+              port: nginx
             initialDelaySeconds: 2
             periodSeconds: 3
