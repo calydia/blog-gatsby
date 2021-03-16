@@ -65,7 +65,7 @@ const FooterStyles = styled.footer`
     margin: 0.2em;
     padding: 0.65em;
     &:hover {
-      border: 1px solid black;
+      border: 1px solid ${({ theme }) => theme.footerBorder};
     }
     svg {
       height: 25px;

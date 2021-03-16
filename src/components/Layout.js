@@ -41,11 +41,12 @@ const Layout = ({ children }) => {
           @import url('https://fonts.googleapis.com/css2?family=Average+Sans&family=Rock+Salt&display=swap');
         </style>
       </Helmet>
-      <GlobalStyles />
-      <SkipLink href="#skip-target" id="skip" className="skip-link">Skip to content</SkipLink>
-      <Toggle theme={theme} toggleTheme={themeToggler} />
-
-      <Header />
+      <header>
+        <GlobalStyles />
+        <SkipLink href="#skip-target" id="skip" className="skip-link">Skip to content</SkipLink>
+        <Toggle theme={theme} toggleTheme={themeToggler} />
+        <Header />
+      </header>
       {children}
       <Footer />
     </ThemeProvider>

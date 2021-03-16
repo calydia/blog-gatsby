@@ -82,7 +82,7 @@ const BlogMainContent = styled.div`
   }
 `;
 
-const BlogWriterContent = styled.aside`
+const BlogWriterContent = styled.div`
   color: ${({ theme }) => theme.postText};
   margin-top: 145px;
   width: 100%;

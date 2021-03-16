@@ -9,7 +9,6 @@ const FrontBlogListing = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 30px 30px;
-    list-style: none;
     margin: 0;
     padding-left: 0;
     width: 100%;
@@ -20,9 +19,6 @@ const FrontBlogListing = styled.div`
     @media only screen and (min-width: 940px) {
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 50px 50px;
-    }
-    li::before {
-      content: "\\200B";
     }
   }
   .blog-list-item {

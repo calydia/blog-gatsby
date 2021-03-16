@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useStaticQuery, Link, graphql } from 'gatsby';
 
 
-const HeaderStyles = styled.header`
+const HeaderStyles = styled.div`
 padding: 5em 0 2em 0;
 position: relative;
 text-align: center;

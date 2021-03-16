@@ -43,15 +43,15 @@ const GamesListing = ({ data }) => {
                     <GatsbyImage
                       image={getImage(node.listingImageFile)} alt=""
                     />
-                    <div className="post-content" aria-hidden="true">
-                      <span id={`first-blog-title${index}`} className="blog-listing-title">
+                    <div className="post-content">
+                      <span className="blog-listing-title">
                         {node.title}
                       </span>
                       <span className="visually-hidden">on</span>
                       <span className="blog-info">
                       {dayjs(node.date)
                           .format(`MMMM DD, YYYY`)}{' '}
-                        | <span className="visually-hidden">in category</span> {node.category}
+                        <span aria-hidden="true">|</span> <span className="visually-hidden">in category</span> {node.category}
                       </span>
                     </div>
                   </a>
@@ -65,15 +65,15 @@ const GamesListing = ({ data }) => {
                     <GatsbyImage
                       image={getImage(node.listingImageFile)} alt=""
                     />
-                    <div className="post-content" aria-hidden="true">
-                      <span id={`first-blog-title${index}`} className="blog-listing-title">
+                    <div className="post-content">
+                      <span className="blog-listing-title">
                         {node.title}
                       </span>
                       <span className="visually-hidden">on</span>
                       <span className="blog-info">
                       {dayjs(node.date)
                           .format(`MMMM DD, YYYY`)}{' '}
-                        | <span className="visually-hidden">in category</span> {node.category}
+                        <span aria-hidden="true">|</span> <span className="visually-hidden">in category</span> {node.category}
                       </span>
                     </div>
                   </a>
