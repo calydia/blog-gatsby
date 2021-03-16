@@ -50,8 +50,7 @@ const Home = ({ data }) => {
             {newest.items.map((node, index) => {
                   return (
                     <li key={`list-item${index}`} className="blog-list-item newest-blog">
-                      <a key={index} className="post" href={node.slug}
-                        aria-label={`${node.title} on ${dayjs(node.date).format(`MMMM DD, YYYY`)} | in category ${node.category}`}>
+                      <a key={index} className="post" href={node.slug} >
                         <GatsbyImage
                           image={getImage(node.listingImageFile)} alt=""
                         />
@@ -75,8 +74,7 @@ const Home = ({ data }) => {
             {listing.items.map((node, index) => {
                   return (
                     <li key={`list-item${index}`} className="blog-list-item">
-                      <a key={index} className="post" href={node.slug}
-                      aria-label={`${node.title} on ${dayjs(node.date).format(`MMMM DD, YYYY`)} | in category ${node.category}`}>
+                      <a key={index} className="post" href={node.slug}>
                         <GatsbyImage
                           image={getImage(node.listingImageFile)} alt=""
                         />
