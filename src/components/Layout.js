@@ -37,7 +37,6 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={themeMode}>
       <Helmet>
-        <meta charSet="utf-8" />
         <style>
           @import url('https://fonts.googleapis.com/css2?family=Average+Sans&family=Rock+Salt&display=swap');
         </style>

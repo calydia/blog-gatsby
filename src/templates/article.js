@@ -96,7 +96,7 @@ const BlogWriterContent = styled.aside`
     width: 150px;
   }
   .info-content {
-    @include fontSize(18px);
+    font-size: 1.125rem;
     background: ${({ theme }) => theme.writerBg};
     display: flex;
     flex-flow: row wrap;
@@ -120,7 +120,7 @@ const BlogWriterContent = styled.aside`
 `;
 
 const BlogPost = ({ data }) => {
-  const post = data.drupal.articleSlug; 
+  const post = data.drupal.articleSlug;
 
   const mainImage = getImage(post.mainImageFile);
   const authorImage = getImage(post.authorImageFile);

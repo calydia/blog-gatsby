@@ -23,7 +23,7 @@ const Home = ({ data }) => {
     const page = data.drupal.page;
     const newest = data.drupal.frontNewest;
     const listing = data.drupal.frontListing;
-    
+
   return (
     <Layout>
       <main>
@@ -51,7 +51,7 @@ const Home = ({ data }) => {
                   return (
                     <li key={`list-item${index}`} className="blog-list-item newest-blog">
                       <a key={index} className="post" href={node.slug}
-                        aria-label={`${node.title} on ${dayjs(node.date).format(`MMMM DD, YYYY`)} in category ${node.category}`}>
+                        aria-label={`${node.title} on ${dayjs(node.date).format(`MMMM DD, YYYY`)} | in category ${node.category}`}>
                         <GatsbyImage
                           image={getImage(node.listingImageFile)} alt=""
                         />
@@ -76,7 +76,7 @@ const Home = ({ data }) => {
                   return (
                     <li key={`list-item${index}`} className="blog-list-item">
                       <a key={index} className="post" href={node.slug}
-                      aria-label={`${node.title} on ${dayjs(node.date).format(`MMMM DD, YYYY`)} in category ${node.category}`}>
+                      aria-label={`${node.title} on ${dayjs(node.date).format(`MMMM DD, YYYY`)} | in category ${node.category}`}>
                         <GatsbyImage
                           image={getImage(node.listingImageFile)} alt=""
                         />
