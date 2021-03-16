@@ -21,6 +21,8 @@ export const lightTheme = {
   postLink: '#033573',
   skipColor: '#54007b',
   skipBg: 'white',
+  codeBg: '#E6E6E6',
+  codeBorder: '#333333'
 }
 
 export const darkTheme = {
@@ -44,6 +46,8 @@ export const darkTheme = {
   postLinkHover: 'wheat',
   skipColor: 'white',
   skipBg: 'black',
+  codeBg: '#03002E',
+  codeBorder: '#CFCFCF'
 }
 
 export const GlobalStyles = createGlobalStyle`
@@ -140,5 +144,11 @@ export const GlobalStyles = createGlobalStyle`
   }
   header {
     background: ${({ theme }) => theme.headerGradient};
+  }
+  code {
+    display: inline-block;
+    outline: 1px solid ${({ theme }) => theme.codeBorder};
+    padding: .1rem .3rem .2rem;
+    background-color: ${({ theme }) => theme.codeBg};
   }
 `
