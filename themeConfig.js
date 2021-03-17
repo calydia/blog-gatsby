@@ -64,6 +64,19 @@ export const GlobalStyles = createGlobalStyle`
     header {
       background: linear-gradient(to right, #35035E 0%, #18399A 50%, #35035E 100%);
     }
+    code {
+      display: inline-block;
+      outline: 1px solid #CFCFCF;
+      padding: .1rem .3rem .2rem;
+      background-color: #03002E;
+    }
+
+    .blog-front-articles {
+      color: white;
+      .blog-list-item {
+        background-color: #18032B;
+      }
+    }
   }
   html,
   body {
@@ -144,18 +157,5 @@ export const GlobalStyles = createGlobalStyle`
   }
   header {
     background: ${({ theme }) => theme.headerGradient};
-  }
-  code {
-    display: inline-block;
-    outline: 1px solid ${({ theme }) => theme.codeBorder};
-    padding: .1rem .3rem .2rem;
-    background-color: ${({ theme }) => theme.codeBg};
-  }
-
-  .blog-front-articles {
-    color: ${({ theme }) => theme.text};
-    .blog-list-item {
-      background-color: ${({ theme }) => theme.listingBg};
-    }
   }
 `
