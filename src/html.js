@@ -14,7 +14,6 @@ export default function HTML(props) {
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
-        <script src="/noflash.js" />
         {props.preBodyComponents}
         <div
           key={`body`}
