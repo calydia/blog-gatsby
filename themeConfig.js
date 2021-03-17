@@ -151,4 +151,11 @@ export const GlobalStyles = createGlobalStyle`
     padding: .1rem .3rem .2rem;
     background-color: ${({ theme }) => theme.codeBg};
   }
+
+  .blog-front-articles {
+    color: ${({ theme }) => theme.text};
+    .blog-list-item {
+      background-color: ${({ theme }) => theme.listingBg};
+    }
+  }
 `
