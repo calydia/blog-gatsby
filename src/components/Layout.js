@@ -30,12 +30,8 @@ top: auto;
 
 const Layout = ({ children }) => {
 
-  const [theme, toggleTheme, componentMounted] = useDarkMode();
+  const [theme, themeToggler] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
-
-  if (!componentMounted) {
-    return <div />
-  };
 
   return (
     <ThemeProvider theme={themeMode}>
@@ -47,7 +43,7 @@ const Layout = ({ children }) => {
       <header>
         <GlobalStyles />
         <SkipLink href="#skip-target" id="skip" className="skip-link">Skip to content</SkipLink>
-        <Toggle theme={theme} toggleTheme={toggleTheme} />
+        <Toggle theme={theme} toggleTheme={themeToggler} />
         <Header />
       </header>
       {children}

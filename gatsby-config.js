@@ -40,7 +40,6 @@ module.exports = {
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
-        "ssr": false
       },
     },
     "gatsby-plugin-image",
@@ -180,14 +179,6 @@ module.exports = {
             title: "Blog - Sanna Mäkinen's RSS Feed",
           }
         ]
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-offline',
-      options: {
-        workboxConfig: {
-          globPatterns: ['**/*']
-        }
       }
     }
   ],
