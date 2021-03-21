@@ -11,7 +11,6 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <link rel="stylesheet" href="styles.css" />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes} className="light">
