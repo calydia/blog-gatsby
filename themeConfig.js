@@ -21,8 +21,10 @@ export const lightTheme = {
   postLink: '#033573',
   skipColor: '#54007b',
   skipBg: 'white',
-  codeBg: '#E6E6E6',
-  codeBorder: '#333333'
+  codeBg: '#DFE7FC',
+  codeBorder: '#BBC9F7',
+  boxBg: '#DFE7FC',
+  boxBorder: '#BBC9F7;'
 }
 
 export const darkTheme = {
@@ -47,7 +49,9 @@ export const darkTheme = {
   skipColor: 'white',
   skipBg: 'black',
   codeBg: '#03002E',
-  codeBorder: '#CFCFCF'
+  codeBorder: '#CFCFCF',
+  boxBg: '#070038',
+  boxBorder: '#18399A;'
 }
 
 export const GlobalStyles = createGlobalStyle`
