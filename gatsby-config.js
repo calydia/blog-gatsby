@@ -55,6 +55,31 @@ module.exports = {
       options: {
         icons: [
           {
+            "src": "/icons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+          },
+          {
+            "src": "/icons/android-chrome-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+          },
+          {
+            "src": "/icons/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+          },
+          {
+            "src": "/icons/icon-16x16.png",
+            "sizes": "48x48",
+            "type": "image/png"
+          },
+          {
+            "src": "/icons/icon-32x32.png",
+            "sizes": "48x48",
+            "type": "image/png"
+          },
+          {
             "src": "/icons/icon-48x48.png",
             "sizes": "48x48",
             "type": "image/png"
