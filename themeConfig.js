@@ -21,8 +21,10 @@ export const lightTheme = {
   postLink: '#033573',
   skipColor: '#54007b',
   skipBg: 'white',
-  codeBg: '#E6E6E6',
-  codeBorder: '#333333'
+  codeBg: '#DFE7FC',
+  codeBorder: '#BBC9F7',
+  boxBg: '#DFE7FC',
+  boxBorder: '#BBC9F7;'
 }
 
 export const darkTheme = {
@@ -47,7 +49,9 @@ export const darkTheme = {
   skipColor: 'white',
   skipBg: 'black',
   codeBg: '#03002E',
-  codeBorder: '#CFCFCF'
+  codeBorder: '#CFCFCF',
+  boxBg: '#070038',
+  boxBorder: '#18399A;'
 }
 
 export const GlobalStyles = createGlobalStyle`
@@ -63,6 +67,19 @@ export const GlobalStyles = createGlobalStyle`
     background-size: 400% 400%;
     header {
       background: linear-gradient(to right, #35035E 0%, #18399A 50%, #35035E 100%);
+    }
+    code {
+      display: inline-block;
+      outline: 1px solid #CFCFCF;
+      padding: .1rem .3rem .2rem;
+      background-color: #03002E;
+    }
+
+    .blog-front-articles {
+      color: white;
+      .blog-list-item {
+        background-color: #18032B;
+      }
     }
   }
   html,
@@ -144,18 +161,5 @@ export const GlobalStyles = createGlobalStyle`
   }
   header {
     background: ${({ theme }) => theme.headerGradient};
-  }
-  code {
-    display: inline-block;
-    outline: 1px solid ${({ theme }) => theme.codeBorder};
-    padding: .1rem .3rem .2rem;
-    background-color: ${({ theme }) => theme.codeBg};
-  }
-
-  .blog-front-articles {
-    color: ${({ theme }) => theme.text};
-    .blog-list-item {
-      background-color: ${({ theme }) => theme.listingBg};
-    }
   }
 `

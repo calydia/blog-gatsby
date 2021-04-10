@@ -33,7 +33,6 @@ const Layout = ({ children }) => {
   const [theme, themeToggler] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
-
   return (
     <ThemeProvider theme={themeMode}>
       <Helmet>

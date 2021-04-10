@@ -24,6 +24,46 @@ const BlogWrapper = styled.div`
       grid-column-end: 3;
     }
   }
+
+  blockquote {
+    border-left: 4px solid ${({ theme }) => theme.linkColor};
+    font-size: 1.4rem;
+    font-style: italic;
+    margin: 2em 0;
+    padding: 0.2em 0 0.2em 1em;
+    p:first-of-type {
+      margin-top: 0;
+    }
+    cite {
+      font-size: 1rem;
+      font-style: normal;
+    }
+  }
+
+  .criteria-box {
+    background-color: ${({ theme }) => theme.boxBg};
+    border: 5px solid ${({ theme }) => theme.boxBorder};
+    display: grid;
+    gap: 1.5em;
+    margin: 2em 0;
+    padding: 1.5em;
+    h2 {
+      font-size: 1.9rem;
+      margin: 0;
+    }
+    ul {
+      margin: 0;
+    }
+  }
+
+  code {
+    background-color: ${({ theme }) => theme.codeBg};
+    border: 1px solid ${({ theme }) => theme.codeBorder};
+    display: inline-block;
+    margin: 0 0.2em;
+    padding: 0.2em 0.5em;
+  }
+
 `;
 
 const BlogMainContent = styled.div`
