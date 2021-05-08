@@ -97,6 +97,10 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 1.3rem;
   }
 
+  ul, li {
+    font-size: 1.3rem;
+  }
+
   a {
     color: inherit;
     text-decoration: none;
