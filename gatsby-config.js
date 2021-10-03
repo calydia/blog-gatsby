@@ -178,6 +178,7 @@ module.exports = {
                   date: item.date,
                   url: site.siteMetadata.siteUrl + '/' + item.slug,
                   guid: site.siteMetadata.siteUrl + '/' + item.slug,
+                  title: item.title,
                 });
               });
             },
