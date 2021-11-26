@@ -124,6 +124,7 @@ const BlogMainContent = styled.div`
 
 const BlogWriterContent = styled.div`
   color: ${({ theme }) => theme.postText};
+  line-height: 1.5;
   margin-top: 145px;
   width: 100%;
   @media only screen and (min-width: 1000px) {
